@@ -8,7 +8,7 @@ without usb pendrive, without ventoy, without grub2win, without rufus
 download the official grub2 binaries from https://gitlab.freedesktop.org/gnu-grub/grub/-/releases  
 at the time of writing this the latest available is grub-2.16~rc2-for-windows.zip  
 extract it to anywhere  
-i am using `d:\myapps\grub2\bin`. usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"
+I am using `d:\myapps\grub2\bin`. I usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"
 open terminal as admin  
 
 ### prepare grub.cfg  
