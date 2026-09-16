@@ -2,7 +2,7 @@
 
 ---
 - shortcut
-    - just download this repo zip. extract efi folder and grub2.cfg right into the efi partition's root.
+    - just download A.7z , its literally a pack of my own laptop's efi partition . check what you need from it, skip microsoft and boot folder if you want. then copy  efi folder and grub2.cfg right into the efi partition's root.
     - windows explorer nags you about permissions , use robocopy, or elevated 7zfm. ( elevated 7zfm is bonkers , you can delete system32 files, rename files, create folders, create files , do crazy stuff . and it will do it easily no prompts , no messing with security tab in windows ) 
 ---
 
