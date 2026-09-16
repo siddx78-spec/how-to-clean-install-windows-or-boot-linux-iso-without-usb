@@ -1,4 +1,4 @@
-## this is born at 2am in the night and finished by 5 am , expect very few little typos . will fix it within a day.
+## this is born at 2am in the night and finished by 5 am , expect a little typos . will fix it within a day.
 ## this guide is for windows users, though you can just ask ai to recode these commands to linux equivalent and it should work just fine.
 
 ---
