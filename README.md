@@ -9,6 +9,8 @@
 ### need secure boot off. though we are not even loading shady efi images
 ### need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
 
+--- 
+# guide starts here 
 ## download  
 
 
@@ -19,7 +21,14 @@
     - if you already have some files in D:\ partition , then just select all files in d:\ and delete them ( lol no, just move them to D:\my , and then extract the iso to D:\  )  
     - then run `ren D:/efi/boot/bootx64.efi D:/efi/boot/mybootx64.efi`  
     - you can actually rename it to anything mybootx64 , yourbootx64 , gangamstyle.efi , anything. as long as the grub2.efi menu entry points to it.  
-    - we need to rename it because we dont want grub2 to load the already installed os , instead search for the extracted iso's efi file.  
+    - we need to rename it because we dont want grub2 to load the already installed os , instead search for the extracted iso's efi file.
+- further you can place a notautounattend.xml generated using https://schneegans.de/windows/unattend-generator/  , and place it at D:\ ,
+    - then when booting into windows installer , select language , next, old/legacy installer , shift+f10 , `setup.exe /Unattend:D:\notautounattend.xml /NoReboot` ,
+    - when install finishes, run `wpeutil reboot` to reboot. dont just close it. this is the proper way to reboot after finishing install from a noreboot setup
+    - this is useful if you want to run things like `del c:\windows\system32\onedrivesetup.exe`
+    - also you can run `fsutil 8dot3name set c: 1 && fsutil 8dot3name strip /s /f c:`
+    - note that its not C: always. check it using diskpart, list vol , or even notepad ctrl+o
+    - another trick : copy out C:\Program Files\7-Zip to D:\myapps\7zfm , now you can run 7zfm gui from winpe, its amazing.
 - download more ram and ssd. the crisis is real.  
 - download the official grub2 binaries from https://gitlab.freedesktop.org/gnu-grub/grub/-/releases  
 - at the time of writing this the latest available is grub-2.16~rc2-for-windows.zip  
