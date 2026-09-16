@@ -99,7 +99,7 @@ technically for your laptop to recognize the grubx64.efi , it needs to be placed
 - either A:\efi\boot
 - or A:\efi\ubuntu
 - but there are reasons why i chose ubuntu.
-1. ubuntu is better than linpus. on lenovo and asus bios. a wild grubx64.efi  , palced in \efi\boot\ is recognized as "linpus lite linux" , it works just fine , but you will be like "woah linpus , what a weird name , giggity."
+1. ubuntu is better than linpus. on lenovo and asus bios. a wild grubx64.efi  , palced in \efi\boot\ is recognized as "linpus lite linux" , it works just fine , but you will be like "woah linpus , what a weird name , lin+puss giggity."
 2. when windows is the first install on the disk. it populates the \efi\boot folder with its own boot64.efi ... this does not happen if you install linux first. then install windows as 2nd os. then the windows installer keeps all its efi files confined to \efi\microsoft\ folder.
   
 ## i will later upload a simple zip file which you can just extract into the efi partition. and call it done.
