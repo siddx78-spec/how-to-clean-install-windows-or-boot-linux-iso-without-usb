@@ -1,7 +1,7 @@
 ## this guide is for windows users, though you can just ask ai to recode these commands to linux equivalent and it should work jsut fine.
 
-## need secure boot off. though we are not even loading shady efi images
-## need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
+### need secure boot off. though we are not even loading shady efi images
+### need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
 
 ## download  
 
@@ -32,9 +32,10 @@ insmod part_gpt
 insmod fat
 configfile (hd0,gpt1)/grub2.cfg
 ```
-### prepare grub2.cfg  
+### prepare grub2.cfg
 
-run  
+note : you can call grub2.cfg anything. in fact you can have multiple grub cfg files , like grub3.cfg , just get into the grub terminal and load it with configfile (hd0,gp1)/grub3.cfg   
+run   
 `type nul >> d:\myapps\grub2\making\grub2.cfg && notepad.exe d:\myapps\grub2\making\grub2.cfg`  
 paste this , save and exit :  
 ```
