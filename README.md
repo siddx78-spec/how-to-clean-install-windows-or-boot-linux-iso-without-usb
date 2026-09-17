@@ -52,10 +52,18 @@ run
 `type nul >> d:\myapps\grub2\making\grub2.cfg && notepad.exe d:\myapps\grub2\making\grub2.cfg`  
 paste this , save and exit :  
 ```
+insmod play
+play 410 668 1 668 1 0 1 668 1 0 1 522 1 668 1 0 1 784 2 0 2 392 2
+menuentry "Halt" {
+    play 57600 0 240 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 349 359 0 121 349 239 0 1 311 719 0 1 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 311 359 0 121 311 239 0 1 277 359 0 1 262 119 0 1 233 239 0 1 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 277 479 0 1 311 239 0 1 262 359 0 1 233 119 0 1 208 239 0 1 208 239 0 1 311 719 0 1 277 959 0 1 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 349 359 0 121 349 239 0 1 311 719 0 1 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 415 479 0 1 262 239 0 1 277 359 0 1 262 119 0 1 233 239 0 1 208 119 0 1 233 119 0 1 277 119 0 1 233 119 0 1 277 479 0 1 311 239 0 1 262 359 0 1 233 119 0 1 208 479 0 1 208 239 0 1 311 479 0 1 277 1199
+    halt
+}
 menuentry "Boot Next Volume" {
+    play 600 988 1 1319 4
     exit
 }
 menuentry "Windows" {
+    play 1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 1661 1 1244 1 466 1 587 1 698 1 932 1 1175 1 1397 1 1865 1 1397 1
     insmod part_gpt
     insmod fat
     insmod chain
@@ -64,6 +72,7 @@ menuentry "Windows" {
     chainloader /EFI/Microsoft/Boot/bootmgfw.efi
 }
 menuentry "Mint ISO" {
+    play 1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 1661 1 1244 1 466 1 587 1 698 1 932 1 1175 1 1397 1 1865 1 1397 1
     insmod part_gpt
     insmod fat
     insmod chain
@@ -75,6 +84,7 @@ menuentry "Mint ISO" {
     initrd (loop)/casper/initrd.lz
 }
 menuentry "Windows Installer" {
+    play 1750 523 1 392 1 523 1 659 1 784 1 1047 1 784 1 415 1 523 1 622 1 831 1 622 1 831 1 1046 1 1244 1 1661 1 1244 1 466 1 587 1 698 1 932 1 1175 1 1397 1 1865 1 1397 1
     search --no-floppy --file --set=root /efi/boot/mybootx64.efi
     chainloader /efi/boot/mybootx64.efi
 }
