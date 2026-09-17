@@ -40,7 +40,8 @@
     - another trick : copy out C:\Program Files\7-Zip to D:\myapps\7zfm , now you can run 7zfm gui from winpe, its amazing.
 
 
-## Step 2. prepare grub.cfg
+## Step 2. prepare some files 
+#### grub.cfg
 
 press win+R , type `cmd` , press ctrl+shift+enter , click yes on admin elevation prompt.  
 run  
@@ -51,7 +52,7 @@ insmod part_gpt
 insmod fat
 configfile (hd0,gpt1)/grub2.cfg
 ```
-## Step 2.1. prepare grub2.cfg
+#### prepare grub2.cfg
 
 note : you can call grub2.cfg anything. in fact you can have multiple grub cfg files , like grub3.cfg , just get into the grub terminal and load it with configfile (hd0,gp1)/grub3.cfg   
 run   
@@ -85,7 +86,7 @@ menuentry "Windows Installer" {
     chainloader /efi/boot/mybootx64.efi
 }
 ```
-## step 2.2. prepare a batch file  
+#### prepare a batch file  
 
 run  
 `type nul >> d:\myapps\grub2\making\test1.bat && notepad.exe d:\myapps\grub2\making\test1.bat`  
@@ -110,7 +111,7 @@ echo. THE END. pausing so that you can look at the execution log.
 pause
 ```
 
-## step 3 run the batch file 
+## step 3. run the batch file 
 
 that's it. 
 now reboot and enjoy 
