@@ -10,9 +10,10 @@
 ### need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
 
 --- 
-# guide starts here
-#### this guide is for windows users. you can ask AI for linux version of this guide
-#### this guide is completely handmade. no ai-slop. 
+# guide starts here  
+
+this guide is for windows users. you can ask AI for linux version of this guide
+this guide is completely handmade. no ai-slop. 
 
 ## Step 1. preparation 
 
@@ -31,7 +32,7 @@
 - extract it to anywhere  
 - I am using `d:\myapps\grub2\bin`. I usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"  
 - WE NEED A ELEVATED CMD FOR GRUB BINARIES TO WORK
-#### tips and tricks    
+#### tips and tricks : 
 - further you can place a notautounattend.xml generated using https://schneegans.de/windows/unattend-generator/  , and place it at D:\ ,
     - then when booting into windows installer , select language , next, old/legacy installer , shift+f10 , `setup.exe /Unattend:D:\notautounattend.xml /NoReboot` ,
     - when install finishes, run `wpeutil reboot` to reboot. dont just close it. this is the proper way to reboot after finishing install from a noreboot setup
