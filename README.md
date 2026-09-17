@@ -32,15 +32,6 @@ this guide is completely handmade. no ai-slop.
 - extract it to anywhere  
 - I am using `d:\myapps\grub2\bin`. I usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"  
 - WE NEED A ELEVATED CMD FOR GRUB BINARIES TO WORK
-#### tips and tricks : 
-- further you can place a notautounattend.xml generated using https://schneegans.de/windows/unattend-generator/  , and place it at D:\ ,
-    - then when booting into windows installer , select language , next, old/legacy installer , shift+f10 , `setup.exe /Unattend:D:\notautounattend.xml /NoReboot` ,
-    - when install finishes, run `wpeutil reboot` to reboot. dont just close it. this is the proper way to reboot after finishing install from a noreboot setup
-    - this is useful if you want to run things like `del c:\windows\system32\onedrivesetup.exe`
-    - also you can run `fsutil 8dot3name set c: 1 && fsutil 8dot3name strip /s /f c:`
-    - note that its not C: always. check it using diskpart, list vol , or even notepad ctrl+o
-    - another trick : copy out C:\Program Files\7-Zip to D:\myapps\7zfm , now you can run 7zfm gui from winpe, its amazing.
-
 
 ## Step 2. prepare some files 
 #### grub.cfg
@@ -118,9 +109,9 @@ pause
 that's it. 
 now reboot and enjoy 
 
+---
 
-
-## note for guys who have dual boot. 
+# note for guys who have dual boot. 
 technically for your laptop to recognize the grubx64.efi , it needs to be placed at 
 - either A:\efi\boot
 - or A:\efi\ubuntu
@@ -130,3 +121,11 @@ technically for your laptop to recognize the grubx64.efi , it needs to be placed
 
 ---
 
+# some cool tips and tricks : 
+- further you can place a notautounattend.xml generated using https://schneegans.de/windows/unattend-generator/  , and place it at D:\ ,
+    - then when booting into windows installer , select language , next, old/legacy installer , shift+f10 , `setup.exe /Unattend:D:\notautounattend.xml /NoReboot` ,
+    - when install finishes, run `wpeutil reboot` to reboot. dont just close it. this is the proper way to reboot after finishing install from a noreboot setup
+    - this is useful if you want to run things like `del c:\windows\system32\onedrivesetup.exe`
+    - also you can run `fsutil 8dot3name set c: 1 && fsutil 8dot3name strip /s /f c:`
+    - note that its not C: always. check it using diskpart, list vol , or even notepad ctrl+o
+    - another trick : copy out C:\Program Files\7-Zip to D:\myapps\7zfm , now you can run 7zfm gui from winpe, its amazing.
