@@ -1,5 +1,4 @@
-## this is born at 2am in the night and finished by 5 am , expect a little typos . will fix it within a day.
-## this guide is for windows users, though you can just ask ai to recode these commands to linux equivalent and it should work just fine.
+## this is born at 2am in the night and finished by 5 am.  I have no time to add more things other than some basic stuff. so chill. fork it. and make your own.
 
 ---
 - shortcut
@@ -11,11 +10,13 @@
 ### need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
 
 --- 
-# guide starts here 
-## download  
+# guide starts here
+## this guide is for windows users, though you can just ask ai to recode these commands to linux equivalent and it should work just fine.
+
+## Step 1. preparation 
 
 
-- linux mint iso ( optional but recommended ) and create a tiny 5gb ntfs partition at the very end of your disk, place the iso in root of this ntfs partition , name it exactly "mint.iso"
+- download linux mint iso ( optional but recommended ) and create a tiny 5gb ntfs partition at the very end of your disk, place the iso in root of this ntfs partition , name it exactly "mint.iso"
     - you can place mint.iso in any parition , but it creates a problem. if mint.iso is located in d:\ and then you boot the iso. you wont be later able to mount d:\ partition through nemo/gparted for using it . because of casper loopback doohickery. 
 - download windows iso  ( I recommend a ltsc iso  `massgrave.dev` or you can do the usual `https://www.microsoft.com/en-in/software-download/windows11` ) 
     - download and extract the contents of the iso file to root of any partition ( D: , partition is what i am using in this guide )
@@ -23,6 +24,13 @@
     - then run `ren D:/efi/boot/bootx64.efi D:/efi/boot/mybootx64.efi`  
     - you can actually rename it to anything mybootx64 , yourbootx64 , gangamstyle.efi , anything. as long as the grub2.efi menu entry points to it.  
     - we need to rename it because we dont want grub2 to load the already installed os , instead search for the extracted iso's efi file.
+- download more ram and ssd. the crisis is real.  
+- download the official grub2 binaries from https://gitlab.freedesktop.org/gnu-grub/grub/-/releases  
+- at the time of writing this the latest available is grub-2.16~rc2-for-windows.zip  
+- extract it to anywhere  
+- I am using `d:\myapps\grub2\bin`. I usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"  
+- WE NEED A ELEVATED CMD FOR GRUB BINARIES TO WORK
+#### tips and tricks    
 - further you can place a notautounattend.xml generated using https://schneegans.de/windows/unattend-generator/  , and place it at D:\ ,
     - then when booting into windows installer , select language , next, old/legacy installer , shift+f10 , `setup.exe /Unattend:D:\notautounattend.xml /NoReboot` ,
     - when install finishes, run `wpeutil reboot` to reboot. dont just close it. this is the proper way to reboot after finishing install from a noreboot setup
@@ -30,14 +38,9 @@
     - also you can run `fsutil 8dot3name set c: 1 && fsutil 8dot3name strip /s /f c:`
     - note that its not C: always. check it using diskpart, list vol , or even notepad ctrl+o
     - another trick : copy out C:\Program Files\7-Zip to D:\myapps\7zfm , now you can run 7zfm gui from winpe, its amazing.
-- download more ram and ssd. the crisis is real.  
-- download the official grub2 binaries from https://gitlab.freedesktop.org/gnu-grub/grub/-/releases  
-- at the time of writing this the latest available is grub-2.16~rc2-for-windows.zip  
-- extract it to anywhere  
-- I am using `d:\myapps\grub2\bin`. I usually use d:\myapps as a place to store portable apps. we only need to work with "D:\myapps\grub2\bin\grub-mkstandalone.exe"  
-- WE NEED A ELEVATED CMD FOR GRUB BINARIES TO WORK
 
-### prepare grub.cfg
+
+## Step 2. prepare grub.cfg
 
 press win+R , type `cmd` , press ctrl+shift+enter , click yes on admin elevation prompt.  
 run  
@@ -48,7 +51,7 @@ insmod part_gpt
 insmod fat
 configfile (hd0,gpt1)/grub2.cfg
 ```
-### prepare grub2.cfg
+## Step 2.1. prepare grub2.cfg
 
 note : you can call grub2.cfg anything. in fact you can have multiple grub cfg files , like grub3.cfg , just get into the grub terminal and load it with configfile (hd0,gp1)/grub3.cfg   
 run   
@@ -82,7 +85,7 @@ menuentry "Windows Installer" {
     chainloader /efi/boot/mybootx64.efi
 }
 ```
-### prepare a batch file  
+## step 2.2. prepare a batch file  
 
 run  
 `type nul >> d:\myapps\grub2\making\test1.bat && notepad.exe d:\myapps\grub2\making\test1.bat`  
@@ -106,6 +109,13 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Get-Partition -DiskN
 echo. THE END. pausing so that you can look at the execution log.
 pause
 ```
+
+## step 3 run the batch file 
+
+that's it. 
+now reboot and enjoy 
+
+
 
 ## note for guys who have dual boot. 
 technically for your laptop to recognize the grubx64.efi , it needs to be placed at 
