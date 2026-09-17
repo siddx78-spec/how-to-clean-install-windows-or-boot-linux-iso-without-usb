@@ -5,7 +5,7 @@
     - windows explorer nags you about permissions , use robocopy, or elevated 7zfm. ( elevated 7zfm is bonkers , you can delete system32 files, rename files, create folders, create files , do crazy stuff . and it will do it easily no prompts , no messing with security tab in windows ) 
 ---
 
-### need secure boot off. though we are not even loading shady efi images
+### need secure boot off. 
 ### need bitlocker drive encryption to be completely off. can be done with manage-bde , ask an ai. go to https://duck.ai and ask it.
 
 --- 
