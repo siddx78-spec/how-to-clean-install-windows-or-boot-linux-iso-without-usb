@@ -12,7 +12,7 @@
 --- 
 # guide starts here
 #### this guide is for windows users. you can ask AI for linux version of this guide
-#### this guide is completely handmade. no ai-alop. 
+#### this guide is completely handmade. no ai-slop. 
 
 ## Step 1. preparation 
 
