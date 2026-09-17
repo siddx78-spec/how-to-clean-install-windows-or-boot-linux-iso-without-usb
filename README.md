@@ -1,4 +1,3 @@
-## this is born at 2am in the night and finished by 5 am.  I have no time to add more things other than some basic stuff. so chill. fork it. and make your own.
 
 ---
 - shortcut
