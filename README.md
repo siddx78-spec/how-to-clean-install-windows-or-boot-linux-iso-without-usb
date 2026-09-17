@@ -11,7 +11,8 @@
 
 --- 
 # guide starts here
-## this guide is for windows users, though you can just ask ai to recode these commands to linux equivalent and it should work just fine.
+#### this guide is for windows users. you can ask AI for linux version of this guide
+#### this guide is completely handmade. no ai-alop. 
 
 ## Step 1. preparation 
 
