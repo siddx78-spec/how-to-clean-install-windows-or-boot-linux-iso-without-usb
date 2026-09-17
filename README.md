@@ -113,7 +113,7 @@ echo. THE END. pausing so that you can look at the execution log.
 pause
 ```
 
-## step 3. run the batch file 
+## step 3. run the batch file as admin
 
 that's it. 
 now reboot and enjoy 
